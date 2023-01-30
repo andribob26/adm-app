@@ -95,7 +95,7 @@ const ManagementUser = () => {
           searchHandler={searchHandler}
           tabelHead={tabelHead}
         >
-          {dataUser.data.length > 0 ? (
+          {dataUser.data.length > 1 ? (
             dataUser.data.map(
               (item, i) =>
                 item.role !== "Pemilik" && (
