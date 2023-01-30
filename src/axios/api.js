@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export default axios.create({
-  headers: { 'Access-Control-Allow-Origin': 'http://localhost:2000' },
+  headers: { 'Access-Control-Allow-Origin': 'https://backend-adm-server-production.up.railway.app' },
   withCredentials: true,
-  baseURL: 'http://localhost:2000'
+  baseURL: 'https://backend-adm-server-production.up.railway.app'
 })
