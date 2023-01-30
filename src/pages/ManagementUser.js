@@ -149,9 +149,9 @@ const ManagementUser = () => {
             <tr className="tw-border-b hover:tw-bg-sky-100">
               <td
                 colSpan={9}
-                className="tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12"
+                className="tw-border tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12"
               >
-                {dataUser.message}
+                Tidak ada data
               </td>
             </tr>
           )}
