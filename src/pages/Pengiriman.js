@@ -39,6 +39,7 @@ const Pengiriman = () => {
       noPolisi: Yup.string().required("No Polisi tidak boleh kosong"),
     }),
     onSubmit: (values) => {
+      setIsLoading(true);
       dispatch(addPengiriman({ data: values, token: dataSession.data?.token }));
     },
   });
@@ -348,10 +349,7 @@ const Pengiriman = () => {
 
         <div className="tw-mt-2 tw-flex tw-justify-end">
           <button
-            onClick={() => {
-              setIsLoading(true);
-              formik.handleSubmit();
-            }}
+            onClick={formik.handleSubmit}
             type="button"
             className="hover:tw-bg-sky-700 tw-flex tw-items-center tw-px-6 tw-py-2 tw-bg-sky-600 tw-text-white tw-font-bold tw-text-xs tw-rounded tw-duration-150 tw-ease-in-out"
           >

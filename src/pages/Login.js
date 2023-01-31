@@ -25,6 +25,7 @@ const Login = () => {
       password: Yup.string().required("Password tidak boleh kosong"),
     }),
     onSubmit: (values) => {
+      setIsLoading(true);
       dispatch(logIn(values));
     },
   });
@@ -137,10 +138,7 @@ const Login = () => {
             </div>
             <div className="tw-mt-8 tw-mb-3">
               <button
-                onClick={() => {
-                  setIsLoading(true);
-                  formik.handleSubmit();
-                }}
+                onClick={formik.handleSubmit}
                 type="button"
                 className="hover:tw-bg-sky-700 tw-flex tw-items-center tw-justify-center tw-w-full tw-px-3 tw-py-2 tw-bg-sky-600 tw-text-white tw-font-bold tw-text-base tw-rounded tw-duration-300 tw-ease-in-out"
               >
