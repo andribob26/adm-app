@@ -9,6 +9,7 @@ import { getAllBahanBaku } from "../store/slices/bahanBakuSlice";
 import { getAllProduk } from "../store/slices/produkSlice";
 
 const Produksi = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [maxQty, setMaxQty] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -50,6 +51,7 @@ const Produksi = () => {
   useEffect(() => {
     if (resProduksi.success) {
       dispatch(resetResProduksi());
+      setIsLoading(false);
       navigate("/produk", { replace: true });
     }
   }, [resProduksi.success]);
@@ -213,10 +215,21 @@ const Produksi = () => {
 
         <div className="tw-mt-2 tw-flex tw-justify-end">
           <button
-            onClick={formik.handleSubmit}
+            onClick={() => {
+              setIsLoading(true);
+              formik.handleSubmit();
+            }}
             type="button"
             className="hover:tw-bg-sky-700 tw-flex tw-items-center tw-px-6 tw-py-2 tw-bg-sky-600 tw-text-white tw-font-bold tw-text-xs tw-rounded tw-duration-150 tw-ease-in-out"
           >
+            {isLoading && (
+              <div
+                className="spinner-border animate-spin tw-inline-block tw-w-4 tw-h-4 tw-border-2 tw-rounded-full tw-mr-2"
+                role="status"
+              >
+                <span className="tw-visually-hidden">Loading...</span>
+              </div>
+            )}
             Simpan
           </button>
         </div>

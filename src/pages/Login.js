@@ -8,6 +8,7 @@ import { useNavigate, Navigate, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 const Login = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const [isShowPass, setIsShowPass] = useState(false);
@@ -40,6 +41,7 @@ const Login = () => {
 
   useEffect(() => {
     if (dataSession.data?.auth) {
+      setIsLoading(false);
       navigate("/", {
         replace: true,
         state: { title: "", subtitle: "", from: location },
@@ -135,11 +137,14 @@ const Login = () => {
             </div>
             <div className="tw-mt-8 tw-mb-3">
               <button
-                onClick={formik.handleSubmit}
+                onClick={() => {
+                  setIsLoading(true);
+                  formik.handleSubmit();
+                }}
                 type="button"
                 className="hover:tw-bg-sky-700 tw-flex tw-items-center tw-justify-center tw-w-full tw-px-3 tw-py-2 tw-bg-sky-600 tw-text-white tw-font-bold tw-text-base tw-rounded tw-duration-300 tw-ease-in-out"
               >
-                {dataLogin.isLoading && (
+                {isLoading && (
                   <div
                     className="spinner-border animate-spin tw-inline-block tw-w-5 tw-h-5 tw-border-2 tw-rounded-full tw-mr-2"
                     role="status"

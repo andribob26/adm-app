@@ -13,6 +13,7 @@ import {
 } from "../store/slices/pengirimanSlice";
 
 const Pengiriman = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [kodeU, setKodeU] = useState(0);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -149,6 +150,7 @@ const Pengiriman = () => {
   useEffect(() => {
     if (resPengiriman.success) {
       dispatch(resetResPengiriman());
+      setIsLoading(false);
       navigate("/laporan-pengiriman", { replace: true });
     }
   }, [resPengiriman.success]);
@@ -346,10 +348,21 @@ const Pengiriman = () => {
 
         <div className="tw-mt-2 tw-flex tw-justify-end">
           <button
-            onClick={formik.handleSubmit}
+            onClick={() => {
+              setIsLoading(true);
+              formik.handleSubmit();
+            }}
             type="button"
             className="hover:tw-bg-sky-700 tw-flex tw-items-center tw-px-6 tw-py-2 tw-bg-sky-600 tw-text-white tw-font-bold tw-text-xs tw-rounded tw-duration-150 tw-ease-in-out"
           >
+            {isLoading && (
+              <div
+                className="spinner-border animate-spin tw-inline-block tw-w-4 tw-h-4 tw-border-2 tw-rounded-full tw-mr-2"
+                role="status"
+              >
+                <span className="tw-visually-hidden">Loading...</span>
+              </div>
+            )}
             Simpan
           </button>
         </div>
