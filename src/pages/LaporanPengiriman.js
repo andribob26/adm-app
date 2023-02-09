@@ -187,7 +187,7 @@ const LaporanPengiriman = () => {
                   />
                 </td>
                 <td className="tw-border tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12">
-                  {moment(item.createAt).format("M/DD/YYYY")}
+                  {moment(item.createdAt).format("M/DD/YYYY")}
                 </td>
                 <td className="tw-border tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12">
                   <div className="tw-flex tw-gap-2 tw-items-center tw-w-full">

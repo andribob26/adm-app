@@ -204,7 +204,7 @@ const ModalBulanan = ({ token }) => {
                               />
                             </td>
                             <td className="tw-border tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12 tw-text-right">
-                              {moment(item.createAt).format("M/DD/YYYY")}
+                              {moment(item.createdAt).format("M/DD/YYYY")}
                             </td>
                           </tr>
                         );
