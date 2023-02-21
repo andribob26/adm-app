@@ -44,7 +44,7 @@ const Login = () => {
     if (!dataLogin.isLoading) {
       setTimeout(() => {
         setIsLoading(false);
-      }, 500);
+      }, 1000);
     }
   }, [dataLogin.isLoading]);
 

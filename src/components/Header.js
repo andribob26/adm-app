@@ -9,6 +9,7 @@ const Header = ({
   logOutHandler,
   showModalUser,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
   const dataSession = useSelector((state) => state.authSlice.dataSession);
   // const dataUserById = useSelector((state) => state.userSlice.dataUserById);
   const location = useLocation();
@@ -42,10 +43,10 @@ const Header = ({
           <button
             onClick={showNavHandler}
             type="button"
-            className="md:tw-hidden tw-absolute tw-ml-3 tw-left-0 tw-top-[9px] md:tw-top-3 tw-text-gray-700 tw-flex tw-items-center tw-p-1 tw-hover:text-gray-500 tw-transition tw-duration-300 tw-ease-in-out"
+            className="md:tw-hidden tw-absolute tw-justify-center tw-h-10 tw-w-10 tw-ml-3 tw-left-0 tw-top-[9px] md:tw-top-3 tw-text-gray-700 tw-flex tw-items-center tw-hover:text-gray-500 tw-transition tw-duration-300 tw-ease-in-out"
           >
             <MdOutlineChevronLeft
-              size={25}
+              size={22}
               className={`${
                 !isOpenNav ? "tw--scale-x-100" : "tw-scale-x-100"
               } tw-transition tw-duration-300 tw-ease-in-out`}
@@ -94,7 +95,7 @@ const Header = ({
             <button
               onClick={showNavHandler}
               type="button"
-              className=" tw-text-gray-700 tw-flex tw-items-center tw-p-2 hover:tw-text-gray-500 hover:tw-bg-gray-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
+              className=" tw-text-gray-700 tw-flex tw-justify-center tw-h-10 tw-w-10 tw-items-center hover:tw-text-gray-500 hover:tw-bg-gray-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
             >
               <MdOutlineChevronLeft
                 size={22}
@@ -111,7 +112,7 @@ const Header = ({
               </li>
               {headerBar.subtitle !== "" && (
                 <li>
-                  <MdChevronRight className="tw-text-gray-500" />
+                  <MdChevronRight className="tw-text-gray-700" />
                 </li>
               )}
               <li>
@@ -128,11 +129,24 @@ const Header = ({
               </p>
             </div>
             <button
-              onClick={logOutHandler}
+              onClick={() => {
+                setIsLoading(true);
+                logOutHandler();
+              }}
               type="button"
-              className="parent tw-text-gray-700 tw-flex tw-items-center tw-p-2 hover:tw-text-gray-500 hover:tw-bg-red-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
+              className="parent tw-justify-center tw-text-gray-700 tw-flex tw-items-center tw-w-10 tw-h-10 hover:tw-text-gray-500 hover:tw-bg-red-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
             >
-              <MdLogout size={22} className="tw-text-gray-500 parent-hover:myHover" />
+              {isLoading ? (
+                <div
+                  className="tw-border-red-500 parent-hover:myHover spinner-border animate-spin tw-inline-block tw-w-5 tw-h-5 tw-border-2 tw-rounded-full"
+                  role="status"
+                ></div>
+              ) : (
+                <MdLogout
+                  size={22}
+                  className="tw-text-gray-700 parent-hover:myHover"
+                />
+              )}
             </button>
 
             {/* <ul

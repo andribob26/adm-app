@@ -37,7 +37,7 @@ const Dasboard = () => {
   }, [dataProduk.data]);
   return (
     <div>
-      <div className="tw-flex tw-flex-col md:tw-flex-row tw-gap-6 ">
+      <div className="tw-flex tw-flex-col md:tw-flex-row tw-gap-1 ">
         <div className="md:tw-w-1/2 tw-bg-white tw-rounded-lg tw-shadow tw-py-2 tw-px-6 tw-divide-y tw-divide-gray-300">
           <div className="tw-flex tw-justify-between tw-items-center mb-3">
             <div className="tw-text-gray-700">

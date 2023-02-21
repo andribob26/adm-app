@@ -70,11 +70,11 @@ const Sidenav = ({ innerRef, startLoading }) => {
                       className={`${
                         headerBar.title === m.id
                           ? 'tw-text-white hover:tw-text-white'
-                          : 'tw-text-gray-700 hover:tw-text-gray-700'
+                          : 'tw-text-gray-700 hover:tw-text-gray-500'
                       } tw-relative tw-flex parent tw-items-center tw-py-2 tw-px-6 tw-overflow-hidden tw-text-ellipsis tw-text-sm tw-whitespace-nowrap tw-transition tw-duration-300 tw-ease-in-out`}
                     >
                       {<m.icon />}
-                      <span className='tw-ml-2 tw-font-semibold'>
+                      <span className='tw-ml-2 tw-font-semibold '>
                         {m.title}
                       </span>
                       <span
