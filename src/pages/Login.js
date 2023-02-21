@@ -42,7 +42,9 @@ const Login = () => {
 
   useEffect(()=>{
     if (!dataLogin.isLoading) {
-      setIsLoading(false);
+      setTimeout(()=>{
+        setIsLoading(false);
+      },[200])
     }
   },[dataLogin.isLoading])
 
