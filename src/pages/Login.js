@@ -38,10 +38,13 @@ const Login = () => {
     if (dataLogin.success) {
       dispatch(getSession());
     }
-    if (!dataLogin.success) {
+  }, [dataLogin.success]);
+
+  useEffect(()=>{
+    if (!dataLogin.isLoading) {
       setIsLoading(false);
     }
-  }, [dataLogin]);
+  },[dataLogin.isLoading])
 
   useEffect(() => {
     if (dataSession.data?.auth) {
