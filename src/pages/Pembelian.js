@@ -288,39 +288,6 @@ const Pembelian = () => {
                         id="qty"
                         placeholder="Qty"
                       />
-                      {/* <input
-                        value={item.qty}
-                        onChange={(e) => {
-                          const result = e.target.value.replace(/\D/g, "");
-                          if (result.length > 0) {
-                            
-                          } else {
-                            let newArr = [...formik.values.detailPembelian];
-                            newArr[i].qty = "";
-                            newArr[i].subTotal = item.harga;
-
-                            formik.setValues((val) => ({
-                              ...val,
-                              detailPembelian: newArr,
-                            }));
-                          }
-                        }}
-                        onBlur={() => {
-                          if (item.qty === "") {
-                            let newArr = [...formik.values.detailPembelian];
-                            newArr[i].qty = 1;
-                            newArr[i].subTotal = item.harga;
-
-                            formik.setValues((val) => ({
-                              ...val,
-                              detailPembelian: newArr,
-                            }));
-                          }
-                        }}
-                        type="text"
-                        className="tw-text-right tw-block tw-w-20 tw-px-2 tw-py-1 tw-text-xs tw-font-semibold  tw-text-gray-700 tw-bg-transparent tw-bg-clip-padding tw-border-b-2 tw-border-dotted tw-border-gray-700 tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-transparent focus:tw-border-sky-600 focus:tw-outline-none"
-                        placeholder="Qty"
-                      /> */}
                     </td>
                     <td className="tw-border tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12 tw-text-right">
                       <CurrencyFormat
@@ -415,26 +382,6 @@ const Pembelian = () => {
               )}
             </div>
           </div>
-          {/* <div className="tw-relative tw-flex tw-w-full md:tw-w-96 tw-items-center">
-            <span className="tw-text-xs tw-font-bold tw-text-gray-700 tw-mr-2">
-              Pemasok
-            </span>
-            <input
-              type="text"
-              className="tw-form-control tw-block tw-w-full tw-px-2 tw-py-1 tw-text-sm tw-font-semibold  tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-sky-600 focus:tw-outline-none"
-              placeholder="Pemasok"
-            />
-          </div>
-          <div className="tw-relative tw-flex tw-w-full md:tw-w-96 tw-items-center">
-            <span className="tw-text-xs tw-font-bold tw-text-gray-700 tw-mr-2">
-              Alamat
-            </span>
-            <input
-              type="text"
-              className="tw-form-control tw-block tw-w-full tw-px-2 tw-py-1 tw-text-sm tw-font-semibold  tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-sky-600 focus:tw-outline-none"
-              placeholder="Pemasok"
-            />
-          </div> */}
         </div>
 
         <div className="tw-mt-2 tw-flex tw-justify-end">
@@ -455,7 +402,6 @@ const Pembelian = () => {
           </button>
         </div>
       </div>
-      {/* </div> */}
       <ModalCari
         hasMatchId={hasMatchId}
         token={dataSession.data?.token}

@@ -100,16 +100,6 @@ const Produk = () => {
                 <td className="tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12">
                   {item.nama}
                 </td>
-                {/* <td className="tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12">
-                  <CurrencyFormat
-                    value={item.harga}
-                    displayType={"text"}
-                    thousandSeparator={"."}
-                    decimalSeparator={","}
-                    prefix={"Rp."}
-                    suffix={",-"}
-                  />
-                </td> */}
                 <td className="tw-border tw-text-xs tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-wrap tw-w-12 tw-text-right">
                   <CurrencyFormat
                     value={item.stok}

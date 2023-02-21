@@ -232,14 +232,6 @@ const Produksi = () => {
           </button>
         </div>
       </div>
-      {/* </div> */}
-      {/* <ModalCari
-        hasMatchId={hasMatchId}
-        token={dataSession.data?.token}
-        addToList={addToList}
-        deleteList={deleteList}
-        listBahanBaku={formik.values.listBahanBaku}
-      /> */}
     </>
   );
 };

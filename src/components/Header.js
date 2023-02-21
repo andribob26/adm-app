@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { MdOutlineChevronLeft, MdChevronRight } from "react-icons/md";
+import { MdOutlineChevronLeft, MdChevronRight, MdLogout } from "react-icons/md";
 
 const Header = ({
   isOpenNav,
@@ -94,10 +94,10 @@ const Header = ({
             <button
               onClick={showNavHandler}
               type="button"
-              className=" tw-text-gray-700 tw-flex tw-items-center tw-p-1 hover:tw-text-gray-500 hover:tw-bg-gray-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
+              className=" tw-text-gray-700 tw-flex tw-items-center tw-p-2 hover:tw-text-gray-500 hover:tw-bg-gray-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
             >
               <MdOutlineChevronLeft
-                size={25}
+                size={22}
                 className={`${
                   isOpenNav ? "tw--scale-x-100" : "tw-scale-x-100"
                 } tw-transition tw-duration-300 tw-ease-in-out`}
@@ -121,29 +121,22 @@ const Header = ({
               </li>
             </ol>
           </div>
-          <div className="tw-flex tw-items-center tw-ml-auto">
-            <div
-              id="dropdownMenuAcount"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              className="tw-bg-sky-600 tw-flex tw-items-center tw-justify-center tw-rounded-full tw-w-8 tw-h-8 tw-cursor-pointer tw-outline tw-outline-2 tw-outline-white hover:tw-outline-sky-300 tw-transition-all tw-duration-300"
-            >
-              <p className="tw-text-white">
-                {dataSession.data?.username[0].toUpperCase()}
-              </p>
-            </div>
+          <div className="tw-flex tw-gap-2 tw-items-center tw-ml-auto">
             <div className="tw-ml-2">
               <p className="tw-text-sm tw-font-semibold tw-flex tw-leading-none tw-flex-col">
-                {dataSession.data?.username}
-
-                <span className="tw-text-xs tw-font-normal">
-                  {dataSession.data?.role}
-                </span>
+                {dataSession.data?.role}
               </p>
             </div>
-            <ul
-              className="dropdown-menu tw-min-w-max tw-w-32 tw-absolute tw-bg-white tw-text-base tw-right-0 tw-py-2 tw-list-none tw-text-left tw-rounded tw-shadow-lg tw-mt-1 tw-hidden tw-m-0 tw-bg-clip-padding tw-border tw-border-solid"
-              aria-labelledby="dropdownMenuAcount"
+            <button
+              onClick={logOutHandler}
+              type="button"
+              className="parent tw-text-gray-700 tw-flex tw-items-center tw-p-2 hover:tw-text-gray-500 hover:tw-bg-red-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
+            >
+              <MdLogout size={22} className="tw-text-gray-500 parent-hover:myHover" />
+            </button>
+
+            {/* <ul
+              className=" tw-min-w-max tw-w-32 tw-absolute tw-bg-white tw-text-base tw-right-0 tw-py-2 tw-list-none tw-text-left tw-rounded tw-shadow-lg tw-mt-1 tw-m-0 tw-bg-clip-padding tw-border tw-border-solid"
             >
               <li className="hover:tw-bg-gray-100">
                 <span
@@ -153,7 +146,7 @@ const Header = ({
                   Logout
                 </span>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </nav>
