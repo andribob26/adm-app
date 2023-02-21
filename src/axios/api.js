@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export default axios.create({
-  headers: { 'Access-Control-Allow-Origin': 'https://backend-adm-server-production.up.railway.app' },
+  headers: { 'Access-Control-Allow-Origin': 'https://backend-adm-server.vercel.app' },
   withCredentials: true,
-  baseURL: 'https://backend-adm-server-production.up.railway.app'
+  baseURL: 'https://backend-adm-server.vercel.app'
 })
 
 // export default axios.create({
