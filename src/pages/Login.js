@@ -40,13 +40,13 @@ const Login = () => {
     }
   }, [dataLogin.success]);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (!dataLogin.isLoading) {
-      setTimeout(()=>{
+      setTimeout(() => {
         setIsLoading(false);
-      },[200])
+      }, 300);
     }
-  },[dataLogin.isLoading])
+  }, [dataLogin.isLoading]);
 
   useEffect(() => {
     if (dataSession.data?.auth) {
