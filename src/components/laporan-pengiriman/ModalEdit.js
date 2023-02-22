@@ -115,56 +115,59 @@ const ModalEdit = ({ valAksi, token }) => {
                         )}
                       </td>
                     </tr>
-                    {valAksi.detailPengiriman.map((item, index) => {
-                      if (formik.values.produks.length > 0) {
-                        return (
-                          <tr key={index}>
-                            <td className="tw-text-sm tw-text-gray-900 tw-font-bold tw-px-6 tw-py-2 tw-whitespace-nowrap tw-w-1/3">
-                              {item.nama}
-                            </td>
-                            <td className="tw-text-sm tw-text-gray-900 tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-nowrap tw-w-2/3">
-                              <CurrencyFormat
-                                thousandSeparator={"."}
-                                decimalSeparator={","}
-                                prefix={"Rp."}
-                                onValueChange={(values) => {
-                                  if (values.value > 0) {
-                                    setErrorHarga(false);
-                                    let arrNew = [...formik.values.produks];
+                    {
+                      // eslint-disable-next-line
+                      valAksi.detailPengiriman.map((item, index) => {
+                        if (formik.values.produks.length > 0) {
+                          return (
+                            <tr key={index}>
+                              <td className="tw-text-sm tw-text-gray-900 tw-font-bold tw-px-6 tw-py-2 tw-whitespace-nowrap tw-w-1/3">
+                                {item.nama}
+                              </td>
+                              <td className="tw-text-sm tw-text-gray-900 tw-font-semibold tw-px-6 tw-py-2 tw-whitespace-nowrap tw-w-2/3">
+                                <CurrencyFormat
+                                  thousandSeparator={"."}
+                                  decimalSeparator={","}
+                                  prefix={"Rp."}
+                                  onValueChange={(values) => {
+                                    if (values.value > 0) {
+                                      setErrorHarga(false);
+                                      let arrNew = [...formik.values.produks];
 
-                                    arrNew[index] = {
-                                      id: item.id,
-                                      harga: parseInt(values.value),
-                                    };
+                                      arrNew[index] = {
+                                        id: item.id,
+                                        harga: parseInt(values.value),
+                                      };
 
-                                    formik.setValues((val) => ({
-                                      ...val,
-                                      produks: arrNew,
-                                    }));
-                                  } else {
-                                    setErrorHarga(true);
-                                    let arrNew = [...formik.values.produks];
-                                    arrNew[index] = {
-                                      id: item.id,
-                                      harga: 0,
-                                    };
+                                      formik.setValues((val) => ({
+                                        ...val,
+                                        produks: arrNew,
+                                      }));
+                                    } else {
+                                      setErrorHarga(true);
+                                      let arrNew = [...formik.values.produks];
+                                      arrNew[index] = {
+                                        id: item.id,
+                                        harga: 0,
+                                      };
 
-                                    formik.setValues((val) => ({
-                                      ...val,
-                                      produks: arrNew,
-                                    }));
-                                  }
-                                }}
-                                value={formik.values.produks[index].harga}
-                                className="tw-form-control tw-block tw-w-full tw-px-3 tw-py-2 tw-text-sm tw-font-normal  tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-sky-600 focus:tw-outline-none"
-                                id={`produks${index}.harga`}
-                                placeholder="Harga"
-                              />
-                            </td>
-                          </tr>
-                        );
-                      }
-                    })}
+                                      formik.setValues((val) => ({
+                                        ...val,
+                                        produks: arrNew,
+                                      }));
+                                    }
+                                  }}
+                                  value={formik.values.produks[index].harga}
+                                  className="tw-form-control tw-block tw-w-full tw-px-3 tw-py-2 tw-text-sm tw-font-normal  tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-sky-600 focus:tw-outline-none"
+                                  id={`produks${index}.harga`}
+                                  placeholder="Harga"
+                                />
+                              </td>
+                            </tr>
+                          );
+                        }
+                      })
+                    }
 
                     {/* <tr className="tw-border-b">
                       <td className="tw-text-sm tw-text-gray-900 tw-font-bold tw-px-6 tw-py-2 tw-whitespace-nowrap tw-w-1/3">
@@ -205,10 +208,12 @@ const ModalEdit = ({ valAksi, token }) => {
               >
                 {resPengiriman.isLoading && (
                   <div
-                    className="spinner-border animate-spin tw-inline-block tw-w-4 tw-h-4 tw-border-2 tw-rounded-full tw-mr-2"
+                    class="tw-inline-block tw-h-5 tw-w-5 tw-animate-spin tw-rounded-full tw-border-[3px] tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite] tw-mr-2"
                     role="status"
                   >
-                    <span className="tw-visually-hidden">Loading...</span>
+                    <span class="!tw-absolute !-tw-m-px !tw-h-px !tw-w-px !tw-overflow-hidden !tw-whitespace-nowrap !tw-border-0 !tw-p-0 !tw-[clip:rect(0,0,0,0)]">
+                      Loading...
+                    </span>
                   </div>
                 )}
                 Simpan
