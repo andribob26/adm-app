@@ -134,17 +134,17 @@ const Header = ({
                 logOutHandler();
               }}
               type="button"
-              className="parent tw-justify-center tw-text-gray-700 tw-flex tw-items-center tw-w-10 tw-h-10 hover:tw-text-gray-500 hover:tw-bg-red-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
+              className="parent tw-justify-center tw-flex tw-items-center tw-w-10 tw-h-10 hover:tw-text-gray-500 hover:tw-bg-red-100 tw-rounded-full tw-transition tw-duration-300 tw-ease-in-out"
             >
               {isLoading ? (
                 <div
-                class="tw-inline-block tw-h-5 tw-w-5 tw-animate-spin tw-rounded-full tw-border-[3px] tw-border-red-500 tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite] tw-mr-2"
-                role="status"
-              >
-                <span class="!tw-absolute !-tw-m-px !tw-h-px !tw-w-px !tw-overflow-hidden !tw-whitespace-nowrap !tw-border-0 !tw-p-0 !tw-[clip:rect(0,0,0,0)]">
-                  Loading...
-                </span>
-              </div>
+                  class="tw-text-red-500 tw-inline-block tw-h-5 tw-w-5 tw-animate-spin tw-rounded-full tw-border-[3px] tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite]"
+                  role="status"
+                >
+                  <span class="!tw-absolute !-tw-m-px !tw-h-px !tw-w-px !tw-overflow-hidden !tw-whitespace-nowrap !tw-border-0 !tw-p-0 !tw-[clip:rect(0,0,0,0)]">
+                    Loading...
+                  </span>
+                </div>
               ) : (
                 <MdLogout
                   size={22}
