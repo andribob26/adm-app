@@ -8,6 +8,7 @@ import {
   getAllUser,
   resetResUser,
 } from "../../store/slices/userSlice";
+import CurrencyFormat from "react-currency-format";
 
 const ModalTambah = ({ token }) => {
   const dispatch = useDispatch();
@@ -133,10 +134,30 @@ const ModalTambah = ({ token }) => {
                     No Hp
                   </label>
                   <div className="tw-relative">
-                    <input
+                    {/* <input
                       onChange={formik.handleChange}
                       value={formik.values.noHp}
-                      type="number"
+                      className="tw-form-control tw-block tw-w-full tw-px-3 tw-py-2 tw-text-sm tw-font-normal  tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-sky-600 focus:tw-outline-none"
+                      id="noHp"
+                      type="tel" 
+                      pattern="[0-9]{12}"
+                      placeholder="P"
+                    />
+                    {formik.touched.noHp && formik.errors.noHp && (
+                      <p className="tw-absolute tw-text-red-500 -tw-top-4 tw-right-0 tw-m-0 tw-text-xs">
+                        {formik.errors.noHp}
+                      </p>
+                    )} */}
+                    <CurrencyFormat
+                      format="####-####-####"
+                      mask="_"
+                      onValueChange={(values) => {
+                        formik.setValues((val) => ({
+                          ...val,
+                          noHp: values.value,
+                        }));
+                      }}
+                      value={formik.values.noHp}
                       className="tw-form-control tw-block tw-w-full tw-px-3 tw-py-2 tw-text-sm tw-font-normal  tw-text-gray-700 tw-bg-white tw-bg-clip-padding tw-border tw-border-solid tw-border-gray-300 tw-rounded tw-transition tw-ease-in-out tw-m-0 focus:tw-text-gray-700 focus:tw-bg-white focus:tw-border-sky-600 focus:tw-outline-none"
                       id="noHp"
                       placeholder="Telephone"
