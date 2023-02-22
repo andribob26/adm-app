@@ -53,7 +53,7 @@ const ModalCariBarang = ({
         aria-labelledby='detail'
         aria-hidden='true'
       >
-        <div className='modal-dialog modal-xl modal-dialog-scrollable tw-relative tw-w-auto tw-pointer-events-none'>
+        <div className='modal-dialog tw-modal-xl modal-dialog-scrollable tw-relative tw-w-auto tw-pointer-events-none'>
           <div className='modal-content tw-border-none tw-shadow-lg tw-relative tw-flex tw-flex-col tw-w-full tw-pointer-events-auto tw-bg-white tw-bg-clip-padding tw-rounded tw-outline-none tw-text-current'>
             <div className='modal-header tw-flex tw-flex-shrink-0 tw-items-center tw-justify-between tw-py-2 tw-px-6 tw-border-b tw-border-gray-200 tw-rounded-t'>
               <h5

@@ -68,7 +68,7 @@ const ModalEdit = ({ valAksi, token }) => {
         aria-labelledby="detail"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-lg modal-dialog-scrollable tw-relative tw-w-auto tw-pointer-events-none">
+        <div className="modal-dialog tw-modal-lg modal-dialog-scrollable tw-relative tw-w-auto tw-pointer-events-none">
           <div className="modal-content tw-border-none tw-shadow-lg tw-relative tw-flex tw-flex-col tw-w-full tw-pointer-events-auto tw-bg-white tw-bg-clip-padding tw-rounded tw-outline-none tw-text-current">
             <div className="modal-header tw-flex tw-flex-shrink-0 tw-items-center tw-justify-between tw-py-2 tw-px-6 tw-border-b tw-border-gray-200 tw-rounded-t">
               <h5
@@ -164,7 +164,7 @@ const ModalEdit = ({ valAksi, token }) => {
               >
                 {resBahanBaku.isLoading && (
                   <div
-                    class="tw-inline-block tw-h-5 tw-w-5 tw-animate-spin tw-rounded-full tw-border-[3px] tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite] tw-mr-2"
+                    class="tw-inline-block tw-h-4 tw-w-4 tw-animate-spin tw-rounded-full tw-border-[3px] tw-border-solid tw-border-current tw-border-r-transparent tw-align-[-0.125em] tw-motion-reduce:animate-[spin_1.5s_linear_infinite] tw-mr-2"
                     role="status"
                   >
                     <span class="!tw-absolute !-tw-m-px !tw-h-px !tw-w-px !tw-overflow-hidden !tw-whitespace-nowrap !tw-border-0 !tw-p-0 !tw-[clip:rect(0,0,0,0)]">
