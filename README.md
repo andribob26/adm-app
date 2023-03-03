@@ -1,4 +1,4 @@
-# HARAP MENCANTUMKAN CREDIT, BILA MANA ANDA MAU MENGEDIT/MEMPUBLISH APLIKASI INI DENGAN NAMA LAIN!!!
+# Harap Mencantumkan Credit, Apabila Anda Ingin Mengeubah atau Mempublis Aplikasi Ini Dengan Nama Lain!
 
 # Getting Started with Create React App
 
